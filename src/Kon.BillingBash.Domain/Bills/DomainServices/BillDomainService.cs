@@ -24,7 +24,7 @@ public class BillDomainService : DomainService
 	{
 		var joiners = await _identityUserRepository.GetListByIdsAsync(joinerIds);
 
-		consumptionRecord.Joiner.AddRange(joiners);
+		consumptionRecord.Joiners.AddIfNotContains(joiners);
 
 		await _consumptionRecordRepository.InsertAsync(consumptionRecord);
 	}

@@ -70,5 +70,5 @@ public class ConsumptionRecord : AggregateRoot<long>
 	/// <summary>
 	/// 参与人
 	/// </summary>
-	public virtual List<IdentityUser> Joiner { get; set; } = new();
+	public virtual ICollection<IdentityUser> Joiners { get; set; } = new List<IdentityUser>();
 }

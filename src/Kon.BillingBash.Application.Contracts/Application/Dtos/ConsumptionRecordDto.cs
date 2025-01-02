@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Kon.BillingBash.Bills.Enums;
 using Volo.Abp.Application.Dtos;
+using Volo.Abp.Identity;
 
 namespace Kon.BillingBash.Application.Dtos;
 
@@ -47,5 +48,5 @@ public class ConsumptionRecordDto : EntityDto<long>
 	/// </summary>
 	public PaymentMethod PaymentMethod { get; set; }
 
-	public List<Guid> JoinerUserId { get; set; } = new();
+	public List<IdentityUserDto> Joiners { get; set; } = new();
 }

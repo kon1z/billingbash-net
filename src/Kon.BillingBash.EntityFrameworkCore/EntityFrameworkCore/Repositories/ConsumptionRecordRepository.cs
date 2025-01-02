@@ -25,7 +25,7 @@ public class ConsumptionRecordRepository : BillingBashEfCoreRepository<Consumpti
 		CancellationToken cancellationToken = default)
 	{
 		var queryable = includeDetails
-			? await WithDetailsAsync()
+			? await WithDetailsAsync(x => x.Joiners)
 			: await GetQueryableAsync();
 
 		var consumptionRecords = await queryable
