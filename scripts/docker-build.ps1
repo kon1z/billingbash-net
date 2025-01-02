@@ -1,0 +1,1 @@
+docker build -t billingbashserver:1.0.1 -f .\src\Kon.BillingBash.HttpApi.Host\Dockerfile .
